@@ -409,12 +409,15 @@
         }
 
         .pillar-img-wrap {
-            width: 100%;
-            height: 260px;
+            width: 160px;
+            height: 240px;
+            margin-left: auto;
+            margin-right: auto;
         }
         @media (min-width: 768px) {
             .pillar-img-wrap {
-                height: 320px;
+                width: 220px;
+                height: 330px;
             }
         }
 
