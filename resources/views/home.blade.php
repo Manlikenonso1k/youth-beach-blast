@@ -67,35 +67,35 @@
     <div class="grid grid-cols-2 md:grid-cols-5 gap-sm md:gap-gutter">
         <!-- Pillar 1 -->
         <div class="flex flex-col items-center group cursor-pointer">
-            <div class="w-full aspect-[2/3] arched-card overflow-hidden mb-sm shadow-[0_8px_24px_rgba(255,95,31,0.1)]">
+            <div class="pillar-img-wrap arched-card overflow-hidden mb-sm shadow-[0_8px_24px_rgba(255,95,31,0.1)]">
                 <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="{{ asset('images/abstral-official-PxT3KJTeXDk-unsplash.jpg') }}"/>
             </div>
             <h3 class="text-headline-md uppercase text-on-surface group-hover:text-primary transition-colors">Music</h3>
         </div>
         <!-- Pillar 2 -->
         <div class="flex flex-col items-center group cursor-pointer md:mt-md">
-            <div class="w-full aspect-[2/3] arched-card overflow-hidden mb-sm shadow-[0_8px_24px_rgba(255,95,31,0.1)]">
+            <div class="pillar-img-wrap arched-card overflow-hidden mb-sm shadow-[0_8px_24px_rgba(255,95,31,0.1)]">
                 <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="{{ asset('images/angelo-moleele-MnGGaUP4Mo4-unsplash.jpg') }}"/>
             </div>
             <h3 class="text-headline-md uppercase text-on-surface group-hover:text-primary transition-colors">Games</h3>
         </div>
         <!-- Pillar 3 -->
         <div class="flex flex-col items-center group cursor-pointer col-span-2 md:col-span-1">
-            <div class="w-full aspect-[2/3] arched-card overflow-hidden mb-sm shadow-[0_8px_24px_rgba(255,95,31,0.1)] border-4 border-primary/20">
+            <div class="pillar-img-wrap arched-card overflow-hidden mb-sm shadow-[0_8px_24px_rgba(255,95,31,0.1)] border-4 border-primary/20">
                 <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="{{ asset('images/hansa-dasun-7XUbEDZxeEs-unsplash.jpg') }}"/>
             </div>
             <h3 class="text-headline-md uppercase text-primary font-bold">Experience</h3>
         </div>
         <!-- Pillar 4 -->
         <div class="flex flex-col items-center group cursor-pointer md:mt-md">
-            <div class="w-full aspect-[2/3] arched-card overflow-hidden mb-sm shadow-[0_8px_24px_rgba(255,95,31,0.1)]">
+            <div class="pillar-img-wrap arched-card overflow-hidden mb-sm shadow-[0_8px_24px_rgba(255,95,31,0.1)]">
                 <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="{{ asset('images/hero pic5.jpg') }}"/>
             </div>
             <h3 class="text-headline-md uppercase text-on-surface group-hover:text-primary transition-colors">Battles</h3>
         </div>
         <!-- Pillar 5 -->
         <div class="flex flex-col items-center group cursor-pointer">
-            <div class="w-full aspect-[2/3] arched-card overflow-hidden mb-sm shadow-[0_8px_24px_rgba(255,95,31,0.1)]">
+            <div class="pillar-img-wrap arched-card overflow-hidden mb-sm shadow-[0_8px_24px_rgba(255,95,31,0.1)]">
                 <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="{{ asset('images/random-institute-p0DsgMj8Smc-unsplash.jpg') }}"/>
             </div>
             <h3 class="text-headline-md uppercase text-on-surface group-hover:text-primary transition-colors">Conversations</h3>

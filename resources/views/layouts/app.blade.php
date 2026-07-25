@@ -408,6 +408,16 @@
             transition: transform 0.3s ease;
         }
 
+        .pillar-img-wrap {
+            width: 100%;
+            height: 260px;
+        }
+        @media (min-width: 768px) {
+            .pillar-img-wrap {
+                height: 320px;
+            }
+        }
+
         .arched-card:hover {
             transform: translateY(-10px);
         }
