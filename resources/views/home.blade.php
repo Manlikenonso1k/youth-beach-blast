@@ -161,8 +161,8 @@
 </section>
 
 <!-- Sponsors Section -->
-<section class="w-full py-lg px-margin-mobile md:px-xl flex flex-col items-center">
-    <h3 class="text-label-lg text-on-surface-variant uppercase tracking-widest mb-md">Our Sponsors</h3>
+<section class="w-full px-margin-mobile md:px-xl flex flex-col items-center" style="padding-top: 3rem; padding-bottom: 3rem; margin-top: 3rem; margin-bottom: 2rem; border-top: 1px solid #e2e2e2;">
+    <h3 class="text-on-surface-variant uppercase tracking-widest" style="font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; line-height: 20px; letter-spacing: 0.05em; margin-bottom: 2rem;">Our Sponsors</h3>
     <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
         <img src="{{ asset('images/icca logo 1.png') }}" class="h-16 md:h-24 object-contain" alt="ICCA">
         <img src="{{ asset('images/icelandbeach logo 1.png') }}" class="h-16 md:h-24 object-contain" alt="Iceland Beach">
