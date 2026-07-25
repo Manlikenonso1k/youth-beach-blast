@@ -41,6 +41,38 @@ php artisan boost:install
 
 Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
 
+## Production Deployment & Setup
+
+This repository includes configuration for shared hosting environments (e.g. Hostinger):
+
+### Changes & Configuration
+- **Root `.htaccess`**: Rewrites all requests to the `public/` directory to resolve 403 Forbidden issues on shared hosting.
+- **PHP Platform Constraint**: `composer.json` is set to target `PHP 8.3.30` platform compatibility to prevent dependency conflicts with newer PHP 8.4 syntax.
+- **SQLite Database Support**: Configured for lightweight SQLite file-based storage.
+
+### Deployment Commands
+
+When deploying to production for the first time:
+
+```bash
+# 1. Pull latest code
+git pull origin main
+
+# 2. Update dependencies for PHP 8.3 platform
+composer update --no-dev --optimize-autoloader
+
+# 3. Setup environment & application key
+cp .env.example .env
+php artisan key:generate
+
+# 4. Create SQLite database & run migrations
+touch database/database.sqlite
+php artisan migrate --force
+
+# 5. Clear caches
+php artisan optimize:clear
+```
+
 ## Contributing
 
 Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
