@@ -3,20 +3,14 @@
 @section('content')
 <!-- 1. Nav Bar -->
 <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-xl py-base md:py-md nav-bar backdrop-blur-xl shadow-[0_8px_32px_rgba(255,95,31,0.15)] transition-all duration-300">
-    <div class="flex items-center gap-4">
-        <div class="font-display-lg text-headline-md tracking-tighter text-primary dark:text-primary-fixed uppercase">
-            BEACH BLAST 2026
-        </div>
-        <div class="hidden md:flex items-center gap-4 ml-4">
-            <img src="{{ asset('images/icca logo 1.png') }}" class="h-8 object-contain" alt="ICCA">
-            <img src="{{ asset('images/icelandbeach logo 1.png') }}" class="h-8 object-contain" alt="Iceland Beach">
-        </div>
+    <div class="font-display-lg text-headline-md tracking-tighter text-primary dark:text-primary-fixed uppercase">
+        BEACH BLAST 2026
     </div>
     <div class="hidden md:flex items-center gap-gutter font-label-lg text-label-lg uppercase">
         <a class="text-primary border-b-2 border-primary pb-1 active:scale-95 transform transition-transform hover:opacity-80 duration-300" href="#">Events</a>
         <a class="text-on-surface-variant hover:text-primary transition-colors active:scale-95 transform transition-transform hover:opacity-80 duration-300" href="#">Schedule</a>
         <a class="text-on-surface-variant hover:text-primary transition-colors active:scale-95 transform transition-transform hover:opacity-80 duration-300" href="#">Venues</a>
-        <a class="text-on-surface-variant hover:text-primary transition-colors active:scale-95 transform transition-transform hover:opacity-80 duration-300" href="#">Tickets</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors active:scale-95 transform transition-transform hover:opacity-80 duration-300" href="{{ url('/ticket') }}">Tickets</a>
     </div>
     <div class="flex items-center gap-sm">
         <div class="hidden md:flex items-center gap-sm text-primary">
@@ -163,6 +157,15 @@
         <button class="bg-primary text-white px-lg py-md rounded-full font-label-lg text-label-lg uppercase hover:opacity-90 transition-all shadow-[0_8px_32px_rgba(255,95,31,0.5)] hover:scale-105 transform border-2 border-white/20">
             View Competitions
         </button>
+    </div>
+</section>
+
+<!-- Sponsors Section -->
+<section class="w-full py-lg px-margin-mobile md:px-xl flex flex-col items-center">
+    <h3 class="text-label-lg text-on-surface-variant uppercase tracking-widest mb-md">Our Sponsors</h3>
+    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+        <img src="{{ asset('images/icca logo 1.png') }}" class="h-16 md:h-24 object-contain" alt="ICCA">
+        <img src="{{ asset('images/icelandbeach logo 1.png') }}" class="h-16 md:h-24 object-contain" alt="Iceland Beach">
     </div>
 </section>
 

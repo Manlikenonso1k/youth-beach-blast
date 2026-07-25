@@ -118,15 +118,9 @@
 <a class="font-headline-md text-headline-md font-extrabold tracking-tighter text-primary dark:text-primary-fixed-dim" href="{{ url('/') }}">
             INTER-UNIVERSITY BEACH BLAST
         </a>
-<div class="flex items-center gap-4">
-    <div class="hidden md:flex items-center gap-4 mr-4">
-        <img src="{{ asset('images/icca logo 1.png') }}" class="h-8 object-contain" alt="ICCA">
-        <img src="{{ asset('images/icelandbeach logo 1.png') }}" class="h-8 object-contain" alt="Iceland Beach">
-    </div>
-    <a class="font-Montserrat text-label-bold text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors scale-95 duration-200 transition-transform hidden md:block" href="{{ url('/') }}">
-                Back to Main Site
-    </a>
-</div>
+<a class="font-Montserrat text-label-bold text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors scale-95 duration-200 transition-transform hidden md:block" href="{{ url('/') }}">
+            Back to Main Site
+        </a>
 </header>
 <!-- Main Content -->
 <main class="flex-grow pt-24 pb-section-gap-mobile md:pb-section-gap-desktop px-margin-mobile md:px-gutter max-w-container-max-width mx-auto w-full">
@@ -243,6 +237,16 @@
 </div>
 </div>
 </main>
+
+<!-- Sponsors Section -->
+<section class="w-full py-12 px-margin-mobile md:px-gutter flex flex-col items-center border-t border-surface-variant mt-12 mb-8">
+    <h3 class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest mb-8">Our Sponsors</h3>
+    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+        <img src="{{ asset('images/icca logo 1.png') }}" class="h-16 md:h-24 object-contain" alt="ICCA">
+        <img src="{{ asset('images/icelandbeach logo 1.png') }}" class="h-16 md:h-24 object-contain" alt="Iceland Beach">
+    </div>
+</section>
+
 <!-- Footer Component -->
 <footer class="w-full py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-gutter max-w-container-max-width mx-auto flex flex-col items-center gap-8 text-center bg-surface-container-low dark:bg-surface-container-lowest text-secondary dark:text-secondary-fixed-dim font-Inter text-body-md opacity-80 hover:opacity-100 transition-opacity">
 <div class="font-Montserrat text-headline-md font-bold text-primary">
