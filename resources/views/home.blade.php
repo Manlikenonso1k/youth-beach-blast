@@ -3,8 +3,14 @@
 @section('content')
 <!-- 1. Nav Bar -->
 <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-xl py-base md:py-md nav-bar backdrop-blur-xl shadow-[0_8px_32px_rgba(255,95,31,0.15)] transition-all duration-300">
-    <div class="font-display-lg text-headline-md tracking-tighter text-primary dark:text-primary-fixed uppercase">
-        BEACH BLAST 2026
+    <div class="flex items-center gap-4">
+        <div class="font-display-lg text-headline-md tracking-tighter text-primary dark:text-primary-fixed uppercase">
+            BEACH BLAST 2026
+        </div>
+        <div class="hidden md:flex items-center gap-4 ml-4">
+            <img src="{{ asset('images/icca logo 1.png') }}" class="h-8 object-contain" alt="ICCA">
+            <img src="{{ asset('images/icelandbeach logo 1.png') }}" class="h-8 object-contain" alt="Iceland Beach">
+        </div>
     </div>
     <div class="hidden md:flex items-center gap-gutter font-label-lg text-label-lg uppercase">
         <a class="text-primary border-b-2 border-primary pb-1 active:scale-95 transform transition-transform hover:opacity-80 duration-300" href="#">Events</a>
@@ -21,9 +27,9 @@
                 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">public</span>
             </button>
         </div>
-        <button class="bg-primary-container text-white px-md py-sm rounded-full font-label-lg text-label-lg uppercase hover:opacity-90 transition-all shadow-[0_4px_16px_rgba(255,95,31,0.3)] active:scale-95">
+        <a href="{{ url('/ticket') }}" class="bg-primary-container text-white px-md py-sm rounded-full font-label-lg text-label-lg uppercase hover:opacity-90 transition-all shadow-[0_4px_16px_rgba(255,95,31,0.3)] active:scale-95 inline-block">
             Register
-        </button>
+        </a>
     </div>
 </nav>
 
@@ -52,9 +58,9 @@
         <p class="text-body-lg text-on-surface-variant max-w-2xl mb-lg">
             The ultimate fusion of sun, sand, and student spirit. Get ready for an unforgettable golden hour experience.
         </p>
-        <button class="bg-primary-container text-white px-lg py-md rounded-full font-label-lg text-label-lg uppercase hover:opacity-90 transition-all shadow-[0_8px_32px_rgba(255,95,31,0.4)] hover:scale-105 transform">
+        <a href="{{ url('/ticket') }}" class="bg-primary-container text-white px-lg py-md rounded-full font-label-lg text-label-lg uppercase hover:opacity-90 transition-all shadow-[0_8px_32px_rgba(255,95,31,0.4)] hover:scale-105 transform inline-block mt-4">
             Get Tickets Now
-        </button>
+        </a>
     </div>
 </header>
 
