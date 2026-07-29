@@ -377,7 +377,7 @@
         }
         
         .nav-bar {
-            background-color: rgba(253, 248, 244, 0.8);
+            background-color: rgba(0, 0, 0, 0.65);
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
         }

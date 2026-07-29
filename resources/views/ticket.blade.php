@@ -109,16 +109,35 @@
         .glow-effect {
             box-shadow: 0 4px 20px rgba(171, 53, 0, 0.3);
         }
+        /* Neon Website Title */
+        .neon-title {
+            color: #00ffd1 !important;
+            text-shadow: 0 0 8px rgba(0, 255, 209, 0.4), 0 0 15px rgba(0, 255, 209, 0.7);
+            transition: all 0.3s ease;
+        }
+        .neon-title:hover {
+            color: #ff571a !important;
+            text-shadow: 0 0 8px rgba(255, 87, 26, 0.4), 0 0 15px rgba(255, 87, 26, 0.7);
+        }
+        /* Neon Nav Link Default state */
+        .nav-link-back {
+            color: rgba(255, 255, 255, 0.6) !important;
+            transition: all 0.3s ease;
+        }
+        .nav-link-back:hover {
+            color: #ff571a !important;
+            text-shadow: 0 0 8px rgba(255, 87, 26, 0.4), 0 0 15px rgba(255, 87, 26, 0.7);
+        }
     </style>
 </head>
 <body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
 <!-- TopNavBar (Transactional/Dead-end - Navigation suppressed per logic, Canvas priority, but prompt requested TopAppBar with specific text) -->
 <!-- Assuming this is a ticketing flow, we suppress the navigation links per the semantic shell mandate for transactional screens, keeping only the brand and secondary action -->
-<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-gutter h-16 bg-surface/70 dark:bg-inverse-surface/70 backdrop-blur-md border-b border-white/20 shadow-sm">
-<a class="font-headline-md text-headline-md font-extrabold tracking-tighter text-primary dark:text-primary-fixed-dim" href="{{ url('/') }}">
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-gutter h-16 bg-black/65 backdrop-blur-md border-b border-white/10 shadow-sm">
+<a class="font-headline-md text-headline-md font-extrabold tracking-tighter neon-title" href="{{ url('/') }}">
             INTER-UNIVERSITY BEACH BLAST
         </a>
-<a class="font-Montserrat text-label-bold text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors scale-95 duration-200 transition-transform hidden md:block" href="{{ url('/') }}">
+<a class="font-Montserrat text-label-bold nav-link-back transition-all duration-200 hidden md:block" href="{{ url('/') }}">
             Back to Main Site
         </a>
 </header>
