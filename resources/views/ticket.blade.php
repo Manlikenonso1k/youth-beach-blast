@@ -129,45 +129,6 @@
             text-shadow: 0 0 8px rgba(255, 87, 26, 0.4), 0 0 15px rgba(255, 87, 26, 0.7);
         }
 
-        /* FAQ Scroller Animations */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes scroll-horizontal {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        @keyframes scroll-horizontal-reverse {
-            0% { transform: translateX(-50%); }
-            100% { transform: translateX(0); }
-        }
-        .animate-scroll-horizontal {
-            animation: scroll-horizontal var(--scroll-duration, 40s) linear infinite;
-        }
-        .animate-scroll-horizontal-reverse {
-            animation: scroll-horizontal-reverse var(--scroll-duration, 40s) linear infinite;
-        }
-        /* Edge fade mask for scroller rows */
-        .scroller-mask {
-            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-            mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-        }
-        /* FAQ card styling */
-        .faq-card {
-            min-width: 340px;
-            max-width: 400px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .faq-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-        }
-        /* Pause scrolling on hover */
-        .scroller-mask:hover .animate-scroll-horizontal,
-        .scroller-mask:hover .animate-scroll-horizontal-reverse {
-            animation-play-state: paused;
-        }
     </style>
 </head>
 <body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
@@ -187,7 +148,7 @@
 <section class="text-center mb-16 md:mb-24">
 <h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-4">Select Your Festival Experience</h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-6">
-                18th â€“ 19th September 2026 â€¢ Secure your spot at Lagos' biggest student beach festival.
+                25th – 26th September 2026 • Secure your spot at Lagos' biggest student beach festival.
             </p>
 <div class="inline-flex items-center gap-2 bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full font-label-sm text-label-sm">
 <span class="material-symbols-outlined text-lg" data-icon="lock" data-weight="fill" style="font-variation-settings: 'FILL' 1;">lock</span>
@@ -298,263 +259,343 @@
 </main>
 
 <!-- FAQ Section -->
-<section class="relative flex flex-col items-center gap-12 py-20 px-margin-mobile md:px-gutter w-full max-w-6xl mx-auto">
+<section class="relative flex flex-col items-center gap-12 py-20 px-margin-mobile md:px-gutter w-full max-w-4xl mx-auto">
     <!-- Section Title -->
-    <div class="flex flex-col items-center gap-6 text-center z-10 max-w-2xl">
-        <h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface font-bold leading-tight"
-            style="opacity: 0; animation: fadeInUp 0.7s ease-out 0.2s forwards;">
+    <div class="flex flex-col items-center gap-6 text-center z-10 w-full">
+        <h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface font-bold leading-tight">
             Frequently Asked Questions
         </h2>
-        <p class="font-body-lg text-body-lg text-on-surface-variant"
-           style="opacity: 0; animation: fadeInUp 0.7s ease-out 0.4s forwards;">
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
             Have questions? We've got answers. If you can't find what you're looking for, feel free to contact us.
         </p>
     </div>
 
-    <!-- Scrolling FAQ Rows -->
-    <div class="flex flex-col gap-8 z-10 w-full">
-
-        <!-- Row 1: Transportation (scroll left, 60s) -->
-        <div class="w-full overflow-hidden relative scroller-mask">
-            <div class="flex animate-scroll-horizontal" style="--scroll-duration: 60s;">
-                <!-- Original set -->
-                <div class="flex items-stretch justify-center flex-shrink-0 gap-8 px-4">
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Is transportation available for attendees?</h3>
-                        <p class="text-base text-on-surface-variant">Yes, but only for attendees who purchase the Access + Transportation Package.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">How much does transportation cost?</h3>
-                        <p class="text-base text-on-surface-variant">Transportation is an additional ₦5,000, bringing the total Access + Transportation Package to ₦10,000.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Where are the pickup locations?</h3>
-                        <p class="text-base text-on-surface-variant">Pickup locations are: Eko Atlantic Entrance (Bar Beach), Ikeja, Akoka/Yaba, and Surulere.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">What time should I arrive at the pickup point?</h3>
-                        <p class="text-base text-on-surface-variant">Please arrive by 12:00 PM on 25th December.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Will transportation be available after the event?</h3>
-                        <p class="text-base text-on-surface-variant">Yes. Return transportation departs at 6:00 AM on 26th December for attendees who purchased the Access + Transportation Package.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Can I come with my own car?</h3>
-                        <p class="text-base text-on-surface-variant">Yes. You're welcome to drive to the venue, and parking is available.</p>
-                    </div>
-                </div>
-                <!-- Duplicate for seamless loop -->
-                <div class="flex items-stretch justify-center flex-shrink-0 gap-8 px-4" aria-hidden="true">
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Is transportation available for attendees?</h3>
-                        <p class="text-base text-on-surface-variant">Yes, but only for attendees who purchase the Access + Transportation Package.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">How much does transportation cost?</h3>
-                        <p class="text-base text-on-surface-variant">Transportation is an additional ₦5,000, bringing the total Access + Transportation Package to ₦10,000.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Where are the pickup locations?</h3>
-                        <p class="text-base text-on-surface-variant">Pickup locations are: Eko Atlantic Entrance (Bar Beach), Ikeja, Akoka/Yaba, and Surulere.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">What time should I arrive at the pickup point?</h3>
-                        <p class="text-base text-on-surface-variant">Please arrive by 12:00 PM on 25th December.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Will transportation be available after the event?</h3>
-                        <p class="text-base text-on-surface-variant">Yes. Return transportation departs at 6:00 AM on 26th December for attendees who purchased the Access + Transportation Package.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Can I come with my own car?</h3>
-                        <p class="text-base text-on-surface-variant">Yes. You're welcome to drive to the venue, and parking is available.</p>
-                    </div>
-                </div>
+    <!-- Interactive FAQ Accordion -->
+    <div class="w-full flex flex-col gap-4">
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>Is transportation available for attendees?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>Yes, but only for attendees who purchase the Access + Transportation Package.</p>
             </div>
-        </div>
+        </details>
 
-        <!-- Row 2: Food & Lunch (scroll right, 50s) -->
-        <div class="w-full overflow-hidden relative scroller-mask">
-            <div class="flex animate-scroll-horizontal-reverse" style="--scroll-duration: 50s;">
-                <div class="flex items-stretch justify-center flex-shrink-0 gap-8 px-4">
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Are snacks included with my ticket?</h3>
-                        <p class="text-base text-on-surface-variant">Snacks are only included if you add the ₦3,000 Lunch Package to your ticket.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Can I buy food and snacks at the venue?</h3>
-                        <p class="text-base text-on-surface-variant">Yes. We offer a wide variety of food and snacks. You can view the menu at morithos.com/menu.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">What is the Lunch Package?</h3>
-                        <p class="text-base text-on-surface-variant">The Lunch Package is an optional meal package for attendees who would like to enjoy our specially prepared lunch.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Is the Lunch Package compulsory?</h3>
-                        <p class="text-base text-on-surface-variant">No. It is completely optional.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">What is Morithos?</h3>
-                        <p class="text-base text-on-surface-variant">Morithos is our partner luxury restaurant and snack bar where attendees with the Lunch Package will enjoy their meal.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Can I add the Lunch Package after purchasing my ticket?</h3>
-                        <p class="text-base text-on-surface-variant">Yes, you can add it before the event.</p>
-                    </div>
-                </div>
-                <div class="flex items-stretch justify-center flex-shrink-0 gap-8 px-4" aria-hidden="true">
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Are snacks included with my ticket?</h3>
-                        <p class="text-base text-on-surface-variant">Snacks are only included if you add the ₦3,000 Lunch Package to your ticket.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Can I buy food and snacks at the venue?</h3>
-                        <p class="text-base text-on-surface-variant">Yes. We offer a wide variety of food and snacks. You can view the menu at morithos.com/menu.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">What is the Lunch Package?</h3>
-                        <p class="text-base text-on-surface-variant">The Lunch Package is an optional meal package for attendees who would like to enjoy our specially prepared lunch.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Is the Lunch Package compulsory?</h3>
-                        <p class="text-base text-on-surface-variant">No. It is completely optional.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">What is Morithos?</h3>
-                        <p class="text-base text-on-surface-variant">Morithos is our partner luxury restaurant and snack bar where attendees with the Lunch Package will enjoy their meal.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Can I add the Lunch Package after purchasing my ticket?</h3>
-                        <p class="text-base text-on-surface-variant">Yes, you can add it before the event.</p>
-                    </div>
-                </div>
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>How much does transportation cost?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>Transportation is an additional ₦5,000, bringing the total Access + Transportation Package to ₦10,000.</p>
             </div>
-        </div>
+        </details>
 
-        <!-- Row 3: Accommodation (scroll left, 55s) -->
-        <div class="w-full overflow-hidden relative scroller-mask">
-            <div class="flex animate-scroll-horizontal" style="--scroll-duration: 55s;">
-                <div class="flex items-stretch justify-center flex-shrink-0 gap-8 px-4">
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Is accommodation available?</h3>
-                        <p class="text-base text-on-surface-variant">Yes, but accommodation must be booked in advance. The event runs throughout the night.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Can I stay overnight?</h3>
-                        <p class="text-base text-on-surface-variant">Yes. However, if you purchased the transportation package, be sure not to miss your return bus, which departs at 6:00 AM on 26th December.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">How do I book accommodation?</h3>
-                        <p class="text-base text-on-surface-variant">Visit icelandbeach.com to check room availability and make your reservation.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Are rooms guaranteed after purchasing a ticket?</h3>
-                        <p class="text-base text-on-surface-variant">No. Purchasing an event ticket does not reserve accommodation. Rooms must be booked separately and are subject to availability.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">What if all the rooms are fully booked?</h3>
-                        <p class="text-base text-on-surface-variant">Tent rentals are available upon request.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Is parking available?</h3>
-                        <p class="text-base text-on-surface-variant">Yes, parking is available for all attendees.</p>
-                    </div>
-                </div>
-                <div class="flex items-stretch justify-center flex-shrink-0 gap-8 px-4" aria-hidden="true">
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Is accommodation available?</h3>
-                        <p class="text-base text-on-surface-variant">Yes, but accommodation must be booked in advance. The event runs throughout the night.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Can I stay overnight?</h3>
-                        <p class="text-base text-on-surface-variant">Yes. However, if you purchased the transportation package, be sure not to miss your return bus, which departs at 6:00 AM on 26th December.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">How do I book accommodation?</h3>
-                        <p class="text-base text-on-surface-variant">Visit icelandbeach.com to check room availability and make your reservation.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Are rooms guaranteed after purchasing a ticket?</h3>
-                        <p class="text-base text-on-surface-variant">No. Purchasing an event ticket does not reserve accommodation. Rooms must be booked separately and are subject to availability.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">What if all the rooms are fully booked?</h3>
-                        <p class="text-base text-on-surface-variant">Tent rentals are available upon request.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Is parking available?</h3>
-                        <p class="text-base text-on-surface-variant">Yes, parking is available for all attendees.</p>
-                    </div>
-                </div>
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>Where are the pickup locations?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>Pickup locations are: Eko Atlantic Entrance (Bar Beach), Ikeja, Akoka/Yaba, and Surulere.</p>
             </div>
-        </div>
+        </details>
 
-        <!-- Row 4: Vendors, Sponsors & General (scroll right, 65s) -->
-        <div class="w-full overflow-hidden relative scroller-mask">
-            <div class="flex animate-scroll-horizontal-reverse" style="--scroll-duration: 65s;">
-                <div class="flex items-stretch justify-center flex-shrink-0 gap-8 px-4">
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Can I become a vendor?</h3>
-                        <p class="text-base text-on-surface-variant">Yes. Simply submit a vendor application describing what you'd like to sell. All applications are subject to approval.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Is there a deadline for vendor applications?</h3>
-                        <p class="text-base text-on-surface-variant">Yes. Vendor applications close on 25th December, one day before the event.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Can companies sponsor the event?</h3>
-                        <p class="text-base text-on-surface-variant">Yes. We welcome sponsorships from companies, brands, and organizations.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">How can I contact customer support?</h3>
-                        <p class="text-base text-on-surface-variant">You can reach us through the WhatsApp button on your ticket confirmation page or on the Iceland Beach website.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Will there be security at the event?</h3>
-                        <p class="text-base text-on-surface-variant">Yes. Security personnel will be present throughout the event to ensure everyone's safety.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">What items are prohibited?</h3>
-                        <p class="text-base text-on-surface-variant">Harmful objects, dangerous items, illegal substances, and anything that may pose a safety risk are strictly prohibited.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Where can I get the latest event updates?</h3>
-                        <p class="text-base text-on-surface-variant">Follow Iceland Beach on TikTok for the latest announcements and event updates.</p>
-                    </div>
-                </div>
-                <div class="flex items-stretch justify-center flex-shrink-0 gap-8 px-4" aria-hidden="true">
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Can I become a vendor?</h3>
-                        <p class="text-base text-on-surface-variant">Yes. Simply submit a vendor application describing what you'd like to sell. All applications are subject to approval.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Is there a deadline for vendor applications?</h3>
-                        <p class="text-base text-on-surface-variant">Yes. Vendor applications close on 25th December, one day before the event.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Can companies sponsor the event?</h3>
-                        <p class="text-base text-on-surface-variant">Yes. We welcome sponsorships from companies, brands, and organizations.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">How can I contact customer support?</h3>
-                        <p class="text-base text-on-surface-variant">You can reach us through the WhatsApp button on your ticket confirmation page or on the Iceland Beach website.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Will there be security at the event?</h3>
-                        <p class="text-base text-on-surface-variant">Yes. Security personnel will be present throughout the event to ensure everyone's safety.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">What items are prohibited?</h3>
-                        <p class="text-base text-on-surface-variant">Harmful objects, dangerous items, illegal substances, and anything that may pose a safety risk are strictly prohibited.</p>
-                    </div>
-                    <div class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg faq-card flex-shrink-0">
-                        <h3 class="text-xl font-bold text-on-surface">Where can I get the latest event updates?</h3>
-                        <p class="text-base text-on-surface-variant">Follow Iceland Beach on TikTok for the latest announcements and event updates.</p>
-                    </div>
-                </div>
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>What time should I arrive at the pickup point?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>Please arrive by 12:00 PM on 25th September.</p>
             </div>
-        </div>
+        </details>
+
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>Will transportation be available after the event?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>Yes. Return transportation departs at 6:00 AM on 26th September for attendees who purchased the Access + Transportation Package.</p>
+            </div>
+        </details>
+
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>Can I come with my own car?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>Yes. You're welcome to drive to the venue, and parking is available.</p>
+            </div>
+        </details>
+
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>Are snacks included with my ticket?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>Snacks are only included if you add the ₦3,000 Lunch Package to your ticket.</p>
+            </div>
+        </details>
+
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>Can I buy food and snacks at the venue?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>Yes. We offer a wide variety of food and snacks. You can view the menu at morithos.com/menu.</p>
+            </div>
+        </details>
+
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>What is the Lunch Package?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>The Lunch Package is an optional meal package for attendees who would like to enjoy our specially prepared lunch.</p>
+            </div>
+        </details>
+        
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>Is the Lunch Package compulsory?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>No. It is completely optional.</p>
+            </div>
+        </details>
+
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>What is Morithos?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>Morithos is our partner luxury restaurant and snack bar where attendees with the Lunch Package will enjoy their meal.</p>
+            </div>
+        </details>
+
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>Can I add the Lunch Package after purchasing my ticket?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>Yes, you can add it before the event.</p>
+            </div>
+        </details>
+
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>Is accommodation available?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>Yes, but accommodation must be booked in advance. The event runs throughout the night.</p>
+            </div>
+        </details>
+
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>Can I stay overnight?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>Yes. However, if you purchased the transportation package, be sure not to miss your return bus, which departs at 6:00 AM on 26th September.</p>
+            </div>
+        </details>
+
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>How do I book accommodation?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>Visit icelandbeach.com to check room availability and make your reservation.</p>
+            </div>
+        </details>
+
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>Are rooms guaranteed after purchasing a ticket?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>No. Purchasing an event ticket does not reserve accommodation. Rooms must be booked separately and are subject to availability.</p>
+            </div>
+        </details>
+        
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>What if all the rooms are fully booked?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>Tent rentals are available upon request.</p>
+            </div>
+        </details>
+
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>Is parking available?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>Yes, parking is available for all attendees.</p>
+            </div>
+        </details>
+
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>Can I become a vendor?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>Yes. Simply submit a vendor application describing what you'd like to sell. All applications are subject to approval.</p>
+            </div>
+        </details>
+
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>Is there a deadline for vendor applications?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>Yes. Vendor applications close on 25th September, one day before the event.</p>
+            </div>
+        </details>
+        
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>Can companies sponsor the event?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>Yes. We welcome sponsorships from companies, brands, and organizations.</p>
+            </div>
+        </details>
+
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>How can I contact customer support?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>You can reach us through the WhatsApp button on your ticket confirmation page or on the Iceland Beach website.</p>
+            </div>
+        </details>
+        
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>Will there be security at the event?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>Yes. Security personnel will be present throughout the event to ensure everyone's safety.</p>
+            </div>
+        </details>
+
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>What items are prohibited?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>Harmful objects, dangerous items, illegal substances, and anything that may pose a safety risk are strictly prohibited.</p>
+            </div>
+        </details>
+
+        <!-- FAQ Item -->
+        <details class="group bg-white rounded-lg shadow-sm border border-surface-variant overflow-hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl text-on-surface hover:bg-surface-container-lowest transition-colors">
+                <span>Where can I get the latest event updates?</span>
+                <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div class="text-on-surface-variant text-base px-6 pb-6">
+                <p>Follow Iceland Beach on TikTok for the latest announcements and event updates.</p>
+            </div>
+        </details>
 
     </div>
 </section>
@@ -579,6 +620,6 @@
 <a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Secure Checkout</a>
 <a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms</a>
 </nav>
-<p class="text-on-surface-variant">Â© 2024 Solstice Beach Festival. Student ID required at entry.</p>
+<p class="text-on-surface-variant">© 2024 Solstice Beach Festival. Student ID required at entry.</p>
 </footer>
 </body></html>
