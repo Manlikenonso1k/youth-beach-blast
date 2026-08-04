@@ -28,6 +28,7 @@ export default function Navbar() {
     const navLinks = [
         { label: 'Experience', href: isHome ? '#experience' : '/#experience' },
         { label: 'Vendors', href: '/vendors' },
+        { label: 'Artists', href: '/artists' },
         { label: 'Sponsors', href: isHome ? '#sponsors' : '/#sponsors' },
         { label: 'Find Us', href: isHome ? '#find-us' : '/#find-us' },
         { label: 'Tickets', href: '/ticket' },

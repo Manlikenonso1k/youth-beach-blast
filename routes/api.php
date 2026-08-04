@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ArtistSubmissionController;
 use App\Http\Controllers\Api\PageController;
 use App\Http\Controllers\Api\SeoController;
 use Illuminate\Http\Request;
@@ -23,5 +24,7 @@ Route::prefix('pages')->group(function () {
     Route::get('/home', [PageController::class, 'home']);
     Route::get('/ticket', [PageController::class, 'ticket']);
 });
+
+Route::post('/artist-submissions', [ArtistSubmissionController::class, 'store']);
 
 Route::get('/seo/{page}', [SeoController::class, 'show']);

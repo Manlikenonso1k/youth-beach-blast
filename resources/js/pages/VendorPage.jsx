@@ -95,7 +95,7 @@ export default function VendorPage() {
                                 Standard Spot Reservation
                             </p>
                             <p className="text-headline-lg text-primary-fixed">
-                                50,000 <span className="text-body-md text-on-surface-variant">Credits</span>
+                              ₦50,000 
                             </p>
                         </div>
                         <span
