@@ -73,6 +73,59 @@ php artisan migrate --force
 php artisan optimize:clear
 ```
 
+## React SPA Migration Notes
+
+The public site in this repository is a React SPA served through Laravel, while Filament remains on `/admin`. If you convert more Blade pages to React later, use the same pattern:
+
+- Keep a single SPA Blade entry point, such as `resources/views/spa.blade.php`.
+- Point `routes/web.php` to a catch-all route that returns the SPA view and excludes `/admin`, `/api`, and other backend paths.
+- Load the frontend through `@vite(['resources/css/app.css', 'resources/js/app.jsx'])` in the SPA Blade file.
+- Keep Laravel-only admin pages separate so Filament does not conflict with the frontend router.
+
+### If the page looks unstyled or the layout is out of proportion
+
+This project previously hit a Tailwind/Vite issue where the app loaded, but utilities like `flex`, `grid`, `px-6`, `w-full`, and responsive `md:` classes were not being applied correctly. If that happens again, check the following in order:
+
+1. Make sure `resources/css/app.css` imports Tailwind and explicitly scans the React and Blade sources with `@source`.
+2. Make sure `vite.config.js` serves Vite on a browser-reachable host such as `127.0.0.1`.
+3. Rebuild the frontend assets with `npm run build`.
+4. Clear Laravel caches with `php artisan view:clear` and `php artisan route:clear`.
+5. Hard refresh the browser so it loads the new CSS bundle from `public/build`.
+
+### Quick recovery commands
+
+```bash
+npm run build
+php artisan view:clear
+php artisan route:clear
+```
+
+If the layout still looks wrong after that, the fastest checks are:
+
+- Confirm the browser is loading the CSS file generated in `public/build/assets`.
+- Confirm the React components still use Tailwind class names in `resources/js/**/*.jsx`.
+- Confirm the navbar CTA and hero spacing were not overridden by a global CSS reset.
+
+### Spacing / glass-panel / neon-* classes not rendering
+
+**Error:** Components render but spacing collapses, glass panels disappear, neon effects missing, icons don't scale. Named tokens like `px-margin-mobile`, `gap-xl`, `glass-panel`, `neon-button` generate no CSS.
+
+**Root causes:**
+
+1. **Mismatch between Tailwind v3 CDN config and Tailwind v4 theme.** If a component is pasted from an HTML mockup that loads Tailwind from CDN with its own `tailwind.config` block, those named tokens don't exist in this project. Solution: replace all named tokens with numeric Tailwind scale (`p-md` → `p-6`, `gap-xl` → `gap-20`, `px-margin-desktop` → `px-16`, etc.). See `resources/js/pages/HomePage.jsx` for the pattern.
+
+2. **Unlayered base CSS beats utilities.** Rules like `a { color: inherit }` or `img { height: auto }` outside `@layer base` override utilities in the cascade. Check `resources/css/app.css`: ensure all base resets are wrapped in `@layer base { ... }` and component styles in `@layer components { ... }`. Test: grep the compiled bundle in `public/build/assets/app-*.css` for `@layer base` and verify rules like `color:inherit` appear *inside* that block.
+
+3. **Opacity or z-index stacking context hides elements.** If background layers or decorative elements disappear, check the root container: a parent with `bg-background` (opaque) and `relative` will paint on top of child elements with `-z-10`. Add `isolate` to the page root or use `<div>` instead of `<main>` to create a new stacking context.
+
+**Solution checklist:**
+
+- Replace all custom token classes with numeric equivalents: `gap-xl` → `gap-20`, `p-lg md:p-xl` → `p-12 md:p-20`.
+- Confirm `app.css`: `a { ... }` and `img { ... }` are inside `@layer base`, not at root level.
+- Confirm `.glass-panel`, `.neon-button`, `.neon-glow-hover`, `.neon-text-primary` are defined in `app.css` (not just in the Tailwind theme).
+- Confirm custom type sizes like `.text-headline-xl` are defined with their responsive breakpoints (`@media (min-width: 768px)`).
+- Run `npm run build && php artisan view:clear && php artisan route:clear` and hard-refresh.
+
 ## Contributing
 
 Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).

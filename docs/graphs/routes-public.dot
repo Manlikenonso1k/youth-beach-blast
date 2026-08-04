@@ -1,0 +1,27 @@
+digraph Routes {
+  rankdir=LR;
+  graph [fontname="Segoe UI"];
+  node [shape=box, style="rounded,filled", fillcolor="#F8FAFC", color="#CBD5E1", fontname="Segoe UI", fontsize=10];
+  edge [color="#64748B", fontname="Segoe UI", fontsize=9];
+  "Client" [shape=oval, fillcolor="#DBEAFE", color="#93C5FD"];
+  "route_api_pages_home" [label="GET api/pages/home
+(unnamed)
+App\\\\Http\\\\Controllers\\\\Api\\\\PageController@home"];
+  "Client" -> "route_api_pages_home";
+  "route_api_pages_ticket" [label="GET api/pages/ticket
+(unnamed)
+App\\\\Http\\\\Controllers\\\\Api\\\\PageController@ticket"];
+  "Client" -> "route_api_pages_ticket";
+  "route_api_seo__page_" [label="GET api/seo/{page}
+(unnamed)
+App\\\\Http\\\\Controllers\\\\Api\\\\SeoController@show"];
+  "Client" -> "route_api_seo__page_";
+  "route_api_user" [label="GET api/user
+(unnamed)
+Closure"];
+  "Client" -> "route_api_user";
+  "route__any__" [label="GET {any?}
+spa
+Closure"];
+  "Client" -> "route__any__";
+}

@@ -1,9 +1,560 @@
 @import 'tailwindcss';
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
+@source '../js';
+@source '../views';
+@source '../../app';
+@source '../../routes';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views';
+@source '../../storage/framework/views';
+
+/* ============================================
+   NEON & BLACK DESIGN SYSTEM
+   Youth Beach Blast 2026
+   ============================================ */
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+
+    /* Core Neon Colors */
+    --color-surface: #111318;
+    --color-surface-dim: #111318;
+    --color-surface-bright: #37393e;
+    --color-surface-container-lowest: #0c0e12;
+    --color-surface-container-low: #1a1c20;
+    --color-surface-container: #1e2024;
+    --color-surface-container-high: #282a2e;
+    --color-surface-container-highest: #333539;
+    --color-on-surface: #e2e2e8;
+    --color-on-surface-variant: #b9cbc3;
+    --color-inverse-surface: #e2e2e8;
+    --color-inverse-on-surface: #2f3035;
+    --color-outline: #83958d;
+    --color-outline-variant: #3a4a44;
+    --color-surface-tint: #00e0b7;
+
+    --color-primary: #fffffd;
+    --color-on-primary: #00382c;
+    --color-primary-container: #00ffd1;
+    --color-on-primary-container: #00725c;
+    --color-inverse-primary: #006b57;
+    --color-primary-fixed: #15ffd1;
+    --color-primary-fixed-dim: #00e0b7;
+    --color-on-primary-fixed: #002019;
+    --color-on-primary-fixed-variant: #005141;
+
+    --color-secondary: #ffb59e;
+    --color-on-secondary: #5e1700;
+    --color-secondary-container: #ff571a;
+    --color-on-secondary-container: #521300;
+    --color-secondary-fixed: #ffdbd0;
+    --color-secondary-fixed-dim: #ffb59e;
+    --color-on-secondary-fixed: #3a0b00;
+    --color-on-secondary-fixed-variant: #852400;
+
+    --color-tertiary: #ffffff;
+    --color-on-tertiary: #3c0090;
+    --color-tertiary-container: #e9ddff;
+    --color-on-tertiary-container: #7829ff;
+    --color-tertiary-fixed: #e9ddff;
+    --color-tertiary-fixed-dim: #d1bcff;
+    --color-on-tertiary-fixed: #23005b;
+    --color-on-tertiary-fixed-variant: #5700c9;
+
+    --color-error: #ffb4ab;
+    --color-on-error: #690005;
+    --color-error-container: #93000a;
+    --color-on-error-container: #ffdad6;
+
+    --color-background: #111318;
+    --color-on-background: #e2e2e8;
+
+    --color-neon-cyan: #00ffd1;
+    --color-neon-orange: #ff571a;
+}
+
+/* ============================================
+   BASE STYLES
+
+   These live in @layer base on purpose. Unlayered CSS always beats
+   layered CSS in the cascade, so an unlayered `a { color: inherit }`
+   or `img { height: auto }` silently overrides `text-primary-fixed`
+   and `h-full`. Keeping them in the base layer lets utilities win.
+   ============================================ */
+
+@layer base {
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: var(--color-background);
+        color: var(--color-on-background);
+        font-family: var(--font-sans);
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    ::selection {
+        background-color: rgba(0, 255, 209, 0.3);
+        color: #ffffff;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+.font-display {
+    font-family: var(--font-display);
+}
+
+.text-display-lg {
+    font-family: var(--font-display);
+    font-size: 64px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+}
+
+.text-display-lg-mobile {
+    font-family: var(--font-display);
+    font-size: 40px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+}
+
+.text-headline-xl {
+    font-family: var(--font-display);
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.text-headline-lg {
+    font-family: var(--font-display);
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+}
+
+.text-headline-lg-mobile {
+    font-family: var(--font-display);
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.text-headline-md {
+    font-family: var(--font-display);
+    font-size: 24px;
+    line-height: 1.3;
+    font-weight: 500;
+}
+
+.text-body-lg {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.text-body-md {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.text-body-sm {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.text-label-lg {
+    font-family: var(--font-display);
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.text-label-md {
+    font-family: var(--font-display);
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.text-label-sm {
+    font-family: var(--font-display);
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+/* ============================================
+   NEON COMPONENT STYLES
+   ============================================ */
+
+.hero-panel {
+    background: linear-gradient(180deg, rgba(10, 12, 16, 0.18), rgba(10, 12, 16, 0.78));
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.glow-ring {
+    box-shadow: 0 0 24px rgba(21, 255, 209, 0.32);
+}
+
+.section-divider {
+    background: linear-gradient(90deg, transparent, rgba(21, 255, 209, 0.7), rgba(255, 181, 158, 0.7), transparent);
+}
+
+/* Vendor page glass + neon treatments */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.glass-panel:hover {
+    border-color: var(--color-primary-fixed);
+    box-shadow: 0 0 20px rgba(21, 255, 209, 0.2);
+}
+
+.neon-glow {
+    box-shadow: 0 0 20px rgba(21, 255, 209, 0.4);
+}
+
+.neon-glow-hover {
+    transition: all 0.3s ease;
+}
+
+.neon-glow-hover:hover {
+    box-shadow: 0 0 20px rgba(21, 255, 209, 0.6);
+    border-color: var(--color-primary-fixed);
+}
+
+.neon-text-primary {
+    text-shadow: 0 0 10px rgba(21, 255, 209, 0.5);
+}
+
+.neon-button {
+    box-shadow: 0 0 20px rgba(21, 255, 209, 0.4);
+    transition: all 0.3s ease;
+}
+
+.neon-button:hover {
+    box-shadow: 0 0 30px rgba(21, 255, 209, 0.6);
+    transform: scale(1.05);
+}
+
+/* Neon Title */
+.neon-title {
+    color: var(--color-neon-cyan) !important;
+    text-shadow: 0 0 8px rgba(0, 255, 209, 0.4), 0 0 15px rgba(0, 255, 209, 0.7);
+    transition: all 0.3s ease;
+}
+
+.neon-title:hover {
+    color: var(--color-neon-orange) !important;
+    text-shadow: 0 0 8px rgba(255, 87, 26, 0.4), 0 0 15px rgba(255, 87, 26, 0.7);
+}
+
+/* Nav Links */
+.nav-link-item {
+    color: rgba(255, 255, 255, 0.6) !important;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 4px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link-item:hover {
+    color: var(--color-neon-orange) !important;
+    border-color: rgba(255, 87, 26, 0.5) !important;
+    text-shadow: 0 0 8px rgba(255, 87, 26, 0.6);
+}
+
+.nav-link-item.active {
+    color: var(--color-neon-cyan) !important;
+    border-color: var(--color-neon-cyan) !important;
+    text-shadow: 0 0 8px rgba(0, 255, 209, 0.6);
+}
+
+/* Nav Bar */
+.nav-bar {
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+}
+
+/* Texture Overlay */
+.texture-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* ============================================
+   HERO SLIDER
+   ============================================ */
+
+.hero-slider {
+    display: flex;
+    width: 300%;
+    animation: slide 15s infinite;
+}
+
+.hero-slide {
+    width: 33.333%;
+    flex-shrink: 0;
+}
+
+@keyframes slide {
+    0%, 25% { transform: translateX(0); }
+    33%, 58% { transform: translateX(-33.333%); }
+    66%, 91% { transform: translateX(-66.666%); }
+    100% { transform: translateX(0); }
+}
+
+/* ============================================
+   GLOW EFFECTS
+   ============================================ */
+
+.glow-effect {
+    box-shadow: 0 4px 20px rgba(0, 255, 209, 0.3);
+}
+
+.glow-effect-orange {
+    box-shadow: 0 4px 20px rgba(255, 87, 26, 0.3);
+}
+
+.btn-neon-primary {
+    background-color: var(--color-primary-fixed);
+    color: #000000;
+    font-family: var(--font-display);
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    padding: 16px 32px;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-neon-primary:hover {
+    box-shadow: 0 0 20px rgba(21, 255, 209, 0.8);
+}
+
+.btn-neon-secondary {
+    background-color: var(--color-secondary);
+    color: #000000;
+    font-family: var(--font-display);
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    padding: 16px 32px;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-neon-secondary:hover {
+    box-shadow: 0 0 25px rgba(255, 181, 158, 0.8);
+}
+
+.btn-glass {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(20px);
+    color: var(--color-primary-fixed);
+    font-family: var(--font-display);
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    padding: 16px 32px;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-glass:hover {
+    border-color: rgba(21, 255, 209, 0.6);
+}
+
+/* ============================================
+   TICKET PAGE STYLES
+   ============================================ */
+
+.ticket-glass-panel {
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.ticket-card {
+    background: var(--color-surface-container-lowest);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: 12px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: box-shadow 0.3s ease;
+}
+
+.ticket-card:hover {
+    box-shadow: 0 0 24px rgba(21, 255, 209, 0.15);
+}
+
+.ticket-card-featured {
+    border: 2px solid var(--color-neon-cyan);
+    box-shadow: 0 4px 20px rgba(0, 255, 209, 0.25);
+}
+
+/* FAQ Accordion */
+.faq-item {
+    background: var(--color-surface-container);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: var(--color-outline);
+}
+
+.faq-item summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--color-on-surface);
+    cursor: pointer;
+    list-style: none;
+    transition: background-color 0.2s ease;
+}
+
+.faq-item summary:hover {
+    background-color: var(--color-surface-container-high);
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item .faq-answer {
+    padding: 0 24px 20px;
+    color: var(--color-on-surface-variant);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.faq-chevron {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+details[open] .faq-chevron {
+    transform: rotate(180deg);
+}
+
+/* Material Icons — in @layer components so text-2xl/text-4xl/text-6xl
+   can still override the 24px default size. */
+@layer components {
+    .material-symbols-outlined {
+        font-family: 'Material Symbols Outlined';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+    }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (min-width: 768px) {
+    .text-display-lg-mobile {
+        font-size: 64px;
+    }
+
+    /* Scales up in CSS rather than via `max-md:` variants — these are
+       hand-written classes, not theme tokens, so Tailwind variants
+       cannot be applied to them. */
+    .text-headline-xl {
+        font-size: 64px;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+    }
+
+    .text-headline-lg-mobile {
+        font-size: 40px;
+        letter-spacing: -0.01em;
+    }
 }

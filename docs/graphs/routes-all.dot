@@ -1,0 +1,95 @@
+digraph Routes {
+  rankdir=LR;
+  graph [fontname="Segoe UI"];
+  node [shape=box, style="rounded,filled", fillcolor="#F8FAFC", color="#CBD5E1", fontname="Segoe UI", fontsize=10];
+  edge [color="#64748B", fontname="Segoe UI", fontsize=9];
+  "Client" [shape=oval, fillcolor="#DBEAFE", color="#93C5FD"];
+  "route_admin" [label="GET admin
+filament.admin.home
+Filament\\\\Http\\\\Controllers\\\\RedirectToHomeController"];
+  "Client" -> "route_admin";
+  "route_admin_login" [label="GET admin/login
+filament.admin.auth.login
+Filament\\\\Pages\\\\Auth\\\\Login"];
+  "Client" -> "route_admin_login";
+  "route_admin_logout" [label="POST admin/logout
+filament.admin.auth.logout
+Filament\\\\Http\\\\Controllers\\\\Auth\\\\LogoutController"];
+  "Client" -> "route_admin_logout";
+  "route_admin_seo_settings" [label="GET admin/seo-settings
+filament.admin.resources.seo-settings.index
+App\\\\Filament\\\\Resources\\\\SeoSettingResource\\\\Pages\\\\ListSeoSettings"];
+  "Client" -> "route_admin_seo_settings";
+  "route_admin_seo_settings_create" [label="GET admin/seo-settings/create
+filament.admin.resources.seo-settings.create
+App\\\\Filament\\\\Resources\\\\SeoSettingResource\\\\Pages\\\\CreateSeoSetting"];
+  "Client" -> "route_admin_seo_settings_create";
+  "route_admin_seo_settings__record__edit" [label="GET admin/seo-settings/{record}/edit
+filament.admin.resources.seo-settings.edit
+App\\\\Filament\\\\Resources\\\\SeoSettingResource\\\\Pages\\\\EditSeoSetting"];
+  "Client" -> "route_admin_seo_settings__record__edit";
+  "route_api_pages_home" [label="GET api/pages/home
+(unnamed)
+App\\\\Http\\\\Controllers\\\\Api\\\\PageController@home"];
+  "Client" -> "route_api_pages_home";
+  "route_api_pages_ticket" [label="GET api/pages/ticket
+(unnamed)
+App\\\\Http\\\\Controllers\\\\Api\\\\PageController@ticket"];
+  "Client" -> "route_api_pages_ticket";
+  "route_api_seo__page_" [label="GET api/seo/{page}
+(unnamed)
+App\\\\Http\\\\Controllers\\\\Api\\\\SeoController@show"];
+  "Client" -> "route_api_seo__page_";
+  "route_api_user" [label="GET api/user
+(unnamed)
+Closure"];
+  "Client" -> "route_api_user";
+  "route_filament_exports__export__download" [label="GET filament/exports/{export}/download
+filament.exports.download
+Filament\\\\Actions\\\\Exports\\\\Http\\\\Controllers\\\\DownloadExport"];
+  "Client" -> "route_filament_exports__export__download";
+  "route_filament_imports__import__failed_rows_download" [label="GET filament/imports/{import}/failed-rows/download
+filament.imports.failed-rows.download
+Filament\\\\Actions\\\\Imports\\\\Http\\\\Controllers\\\\DownloadImportFailureCsv"];
+  "Client" -> "route_filament_imports__import__failed_rows_download";
+  "route_livewire_livewire_js" [label="GET livewire/livewire.js
+(unnamed)
+Livewire\\\\Mechanisms\\\\FrontendAssets\\\\FrontendAssets@returnJavaScriptAsFile"];
+  "Client" -> "route_livewire_livewire_js";
+  "route_livewire_livewire_min_js_map" [label="GET livewire/livewire.min.js.map
+(unnamed)
+Livewire\\\\Mechanisms\\\\FrontendAssets\\\\FrontendAssets@maps"];
+  "Client" -> "route_livewire_livewire_min_js_map";
+  "route_livewire_preview_file__filename_" [label="GET livewire/preview-file/{filename}
+livewire.preview-file
+Livewire\\\\Features\\\\SupportFileUploads\\\\FilePreviewController@handle"];
+  "Client" -> "route_livewire_preview_file__filename_";
+  "route_livewire_update" [label="POST livewire/update
+default.livewire.update
+Livewire\\\\Mechanisms\\\\HandleRequests\\\\HandleRequests@handleUpdate"];
+  "Client" -> "route_livewire_update";
+  "route_livewire_upload_file" [label="POST livewire/upload-file
+livewire.upload-file
+Livewire\\\\Features\\\\SupportFileUploads\\\\FileUploadController@handle"];
+  "Client" -> "route_livewire_upload_file";
+  "route_sanctum_csrf_cookie" [label="GET sanctum/csrf-cookie
+sanctum.csrf-cookie
+Laravel\\\\Sanctum\\\\Http\\\\Controllers\\\\CsrfCookieController@show"];
+  "Client" -> "route_sanctum_csrf_cookie";
+  "route_storage__path_" [label="GET storage/{path}
+storage.local
+Closure"];
+  "Client" -> "route_storage__path_";
+  "route_storage__path_" [label="PUT storage/{path}
+storage.local.upload
+Closure"];
+  "Client" -> "route_storage__path_";
+  "route_up" [label="GET up
+(unnamed)
+Closure"];
+  "Client" -> "route_up";
+  "route__any__" [label="GET {any?}
+spa
+Closure"];
+  "Client" -> "route__any__";
+}
