@@ -115,7 +115,7 @@ export default function ArtistPage() {
                         Inter-university performances taking place on the 24th and 26th. Join the immersive digital stage.
                     </p>
 
-                    <div className="hidden lg:block glass-panel h-full min-h-[600px] relative overflow-hidden rounded-xl p-4 flex flex-col justify-end group border border-white/20 order-3 lg:order-1">
+                    <div className="hidden lg:block glass-panel h-full min-h-[600px] relative overflow-hidden rounded-xl p-4 pb-8 flex flex-col justify-end group border border-white/20 order-3 lg:order-1">
                         <div className="absolute inset-0 z-0 opacity-50 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none" />
                         <div className="absolute inset-0 z-0 flex items-center justify-center p-4">
                             <div className="w-full max-w-md">
@@ -155,17 +155,17 @@ export default function ArtistPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="flex flex-col gap-2">
                                 <label className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Name</label>
-                                <input className="input-ghost px-3 py-3 w-full font-body-md text-white focus-gold" onChange={updateField('name')} placeholder="Full Name" required value={formData.name} type="text" />
+                                <input className="input-ghost px-3 py-3 w-full font-body-md text-white focus-gold bg-white/10 border border-white/20 rounded" onChange={updateField('name')} placeholder="Full Name" required value={formData.name} type="text" />
                             </div>
                             <div className="flex flex-col gap-2">
                                 <label className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Performance Name</label>
-                                <input className="input-ghost px-3 py-3 w-full font-body-md text-white focus-gold" onChange={updateField('performance_name')} placeholder="Stage Name" required value={formData.performance_name} type="text" />
+                                <input className="input-ghost px-3 py-3 w-full font-body-md text-white focus-gold bg-white/10 border border-white/20 rounded" onChange={updateField('performance_name')} placeholder="Stage Name" required value={formData.performance_name} type="text" />
                             </div>
                         </div>
 
                         <div className="flex flex-col gap-2">
                             <label className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Email</label>
-                            <input className="input-ghost px-3 py-3 w-full font-body-md text-white focus-gold" onChange={updateField('email')} placeholder="contact@example.com" required value={formData.email} type="email" />
+                            <input className="input-ghost px-3 py-3 w-full font-body-md text-white focus-gold bg-white/10 border border-white/20 rounded" onChange={updateField('email')} placeholder="contact@example.com" required value={formData.email} type="email" />
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -173,26 +173,26 @@ export default function ArtistPage() {
                                 <label className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Instagram Handle</label>
                                 <div className="relative">
                                     <span className="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">@</span>
-                                    <input className="input-ghost pl-8 pr-3 py-3 w-full font-body-md text-white focus-gold" onChange={updateField('instagram')} placeholder="username" value={formData.instagram} type="text" />
+                                    <input className="input-ghost pl-8 pr-3 py-3 w-full font-body-md text-white focus-gold bg-white/10 border border-white/20 rounded" onChange={updateField('instagram')} placeholder="username" value={formData.instagram} type="text" />
                                 </div>
                             </div>
                             <div className="flex flex-col gap-2">
                                 <label className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">TikTok Handle</label>
                                 <div className="relative">
                                     <span className="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">@</span>
-                                    <input className="input-ghost pl-8 pr-3 py-3 w-full font-body-md text-white focus-gold" onChange={updateField('tiktok')} placeholder="username" value={formData.tiktok} type="text" />
+                                    <input className="input-ghost pl-8 pr-3 py-3 w-full font-body-md text-white focus-gold bg-white/10 border border-white/20 rounded" onChange={updateField('tiktok')} placeholder="username" value={formData.tiktok} type="text" />
                                 </div>
                             </div>
                         </div>
 
                         <div className="flex flex-col gap-2">
                             <label className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Institution</label>
-                            <input className="input-ghost px-3 py-3 w-full font-body-md text-white focus-gold" onChange={updateField('institution')} placeholder="University / College" required value={formData.institution} type="text" />
+                            <input className="input-ghost px-3 py-3 w-full font-body-md text-white focus-gold bg-white/10 border border-white/20 rounded" onChange={updateField('institution')} placeholder="University / College" required value={formData.institution} type="text" />
                         </div>
 
                         <div className="flex flex-col gap-2 transition-opacity duration-300" aria-hidden={!artistMode}>
                             <label className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Name of Best Song</label>
-                            <input className="input-ghost px-3 py-3 w-full font-body-md text-white focus-gold" onChange={updateField('best_song')} placeholder="Track Title" value={formData.best_song} type="text" />
+                            <input className="input-ghost px-3 py-3 w-full font-body-md text-white focus-gold bg-white/10 border border-white/20 rounded" onChange={updateField('best_song')} placeholder="Track Title" value={formData.best_song} type="text" />
                         </div>
 
                         <div className={`${artistMode ? 'hidden' : 'flex'} flex-col gap-2 p-4 bg-surface-container-highest border border-gold/30 rounded-lg`}>
@@ -224,8 +224,10 @@ export default function ArtistPage() {
                         <span className="font-label-sm text-label-sm text-primary-fixed tracking-widest uppercase">Live Submissions</span>
                     </div>
                     <h3 className="font-display text-headline-lg text-white mb-2">Join the Lineup</h3>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant mb-4">Submit your details to perform on the main stage.</p>
-                    <Skiper48 />
+                    <p className="font-body-sm text-body-sm text-on-surface-variant mb-8">Submit your details to perform on the main stage.</p>
+                    <div className="flex justify-center">
+                        <Skiper48 />
+                    </div>
                 </div>
             </section>
         </div>
