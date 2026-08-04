@@ -22,27 +22,33 @@ export default function ArtistPage() {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            gsap.from('.gs-reveal', {
-                y: 45,
-                opacity: 0,
-                duration: 0.9,
-                stagger: 0.12,
-                ease: 'power3.out',
-                delay: 0.15,
-            });
+            gsap.fromTo('.gs-reveal',
+                { y: 45, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.9,
+                    stagger: 0.12,
+                    ease: 'power3.out',
+                    delay: 0.15,
+                }
+            );
 
             gsap.utils.toArray('.gsap-fade-up').forEach((element) => {
-                gsap.from(element, {
-                    scrollTrigger: {
-                        trigger: element,
-                        start: 'top 85%',
-                        toggleActions: 'play none none none',
-                    },
-                    y: 40,
-                    opacity: 0,
-                    duration: 0.9,
-                    ease: 'power3.out',
-                });
+                gsap.fromTo(element,
+                    { y: 40, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        scrollTrigger: {
+                            trigger: element,
+                            start: 'top 85%',
+                            toggleActions: 'play none none none',
+                        },
+                        duration: 0.9,
+                        ease: 'power3.out',
+                    }
+                );
             });
         }, rootRef);
 
@@ -116,7 +122,7 @@ export default function ArtistPage() {
                                 <Skiper48 />
                             </div>
                         </div>
-                        <div className="relative z-10 mt-auto pt-8">
+                        <div className="relative z-10 mt-auto pt-8 pb-8">
                             <div className="flex items-center gap-2 mb-2">
                                 <div className="w-2 h-2 rounded-full bg-primary-fixed shadow-[0_0_8px_#15ffd1] animate-pulse" />
                                 <span className="font-label-sm text-label-sm text-primary-fixed tracking-widest uppercase">Live Submissions</span>
