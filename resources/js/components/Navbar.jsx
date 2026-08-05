@@ -50,6 +50,7 @@ export default function Navbar() {
                 scrolled ? 'shadow-lg' : ''
             }`}
         >
+            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center justify-between px-16 py-4 max-w-screen-2xl mx-auto">
                 {/* Brand */}
                 <Link
@@ -60,7 +61,7 @@ export default function Navbar() {
                 </Link>
 
                 {/* Desktop Nav Links */}
-                <div className="hidden md:flex items-center gap-6 text-label-lg uppercase">
+                <div className="flex items-center gap-6 text-label-lg uppercase">
                     {navLinks.map((link) => (
                         link.href.startsWith('/') ? (
                             <Link
@@ -85,38 +86,51 @@ export default function Navbar() {
                     ))}
                 </div>
 
-                {/* CTA + Mobile Toggle */}
-                <div className="flex items-center gap-3">
-                    <Link
-                        to="/ticket"
-                        className="bg-primary-fixed text-black font-display text-label-md px-6 py-3 rounded-full uppercase
-                            hover:shadow-[0_0_20px_rgba(21,255,209,0.6)] transition-all active:scale-95 inline-block"
-                    >
-                        Register Now
-                    </Link>
+                {/* Desktop CTA */}
+                <Link
+                    to="/ticket"
+                    className="bg-primary-fixed text-black font-display text-label-md px-6 py-3 rounded-full uppercase
+                        hover:shadow-[0_0_20px_rgba(21,255,209,0.6)] transition-all active:scale-95 inline-block"
+                >
+                    Register Now
+                </Link>
+            </div>
 
-                    {/* Mobile hamburger */}
-                    <button
-                        className="md:hidden text-on-surface p-2"
-                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        aria-label="Toggle menu"
-                    >
-                        <span className="material-symbols-outlined text-2xl">
-                            {mobileMenuOpen ? 'close' : 'menu'}
-                        </span>
-                    </button>
-                </div>
+            {/* Mobile Header */}
+            <div className="md:hidden flex items-center justify-between px-4 py-4">
+                {/* Brand */}
+                <Link
+                    to="/"
+                    className="font-display text-label-lg font-bold text-primary-fixed drop-shadow-[0_0_10px_rgba(0,255,209,0.4)] uppercase"
+                >
+                    BEACH BLAST
+                </Link>
+
+                {/* Mobile hamburger */}
+                <button
+                    className="text-primary-fixed p-2"
+                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    aria-label="Toggle menu"
+                >
+                    <span className="material-symbols-outlined text-2xl">
+                        {mobileMenuOpen ? 'close' : 'menu'}
+                    </span>
+                </button>
             </div>
 
             {/* Mobile Menu */}
             {mobileMenuOpen && (
-                <div className="md:hidden bg-surface-container-lowest/95 backdrop-blur-xl border-t border-white/10 px-4 py-6 space-y-4 animate-in">
+                <div className="md:hidden bg-surface/20 backdrop-blur-xl border-t border-primary-fixed/20 px-4 py-6 space-y-3 animate-in">
                     {navLinks.map((link) => (
                         link.href.startsWith('/') ? (
                             <Link
                                 key={link.label}
                                 to={link.href}
-                                className="block text-label-lg uppercase text-on-surface-variant hover:text-primary-fixed transition-colors py-2"
+                                className={`block text-label-md uppercase py-2 transition-colors ${
+                                    location.pathname === link.href
+                                        ? 'text-primary-fixed font-bold'
+                                        : 'text-on-surface-variant hover:text-primary-fixed'
+                                }`}
                             >
                                 {link.label}
                             </Link>
@@ -124,13 +138,22 @@ export default function Navbar() {
                             <a
                                 key={link.label}
                                 href={link.href}
-                                className="block text-label-lg uppercase text-on-surface-variant hover:text-primary-fixed transition-colors py-2"
+                                className="block text-label-md uppercase py-2 text-on-surface-variant hover:text-primary-fixed transition-colors"
                                 onClick={(e) => handleNavClick(e, link.href)}
                             >
                                 {link.label}
                             </a>
                         )
                     ))}
+                    <div className="pt-4 border-t border-white/10">
+                        <Link
+                            to="/ticket"
+                            className="block bg-primary-fixed text-black font-display text-label-md px-4 py-3 rounded-lg uppercase text-center
+                                hover:shadow-[0_0_20px_rgba(21,255,209,0.6)] transition-all active:scale-95"
+                        >
+                            Register Now
+                        </Link>
+                    </div>
                 </div>
             )}
         </nav>
