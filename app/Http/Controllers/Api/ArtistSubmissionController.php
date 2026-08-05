@@ -15,6 +15,7 @@ class ArtistSubmissionController extends Controller
         $validated = Validator::make($request->all(), [
             'mode' => ['required', 'in:artist,dj'],
             'name' => ['required', 'string', 'max:255'],
+            'number' => ['required', 'string', 'max:255'],
             'performance_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255'],
             'instagram' => ['nullable', 'string', 'max:255'],
@@ -28,6 +29,7 @@ class ArtistSubmissionController extends Controller
             '',
             'Mode: '.strtoupper($validated['mode']),
             'Name: '.$validated['name'],
+            'Number: '.$validated['number'],
             'Performance Name: '.$validated['performance_name'],
             'Email: '.$validated['email'],
             'Instagram: '.($validated['instagram'] ?: 'N/A'),

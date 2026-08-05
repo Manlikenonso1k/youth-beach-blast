@@ -4,6 +4,10 @@ digraph Routes {
   node [shape=box, style="rounded,filled", fillcolor="#F8FAFC", color="#CBD5E1", fontname="Segoe UI", fontsize=10];
   edge [color="#64748B", fontname="Segoe UI", fontsize=9];
   "Client" [shape=oval, fillcolor="#DBEAFE", color="#93C5FD"];
+  "route_api_artist_submissions" [label="POST api/artist-submissions
+(unnamed)
+App\\\\Http\\\\Controllers\\\\Api\\\\ArtistSubmissionController@store"];
+  "Client" -> "route_api_artist_submissions";
   "route_api_pages_home" [label="GET api/pages/home
 (unnamed)
 App\\\\Http\\\\Controllers\\\\Api\\\\PageController@home"];

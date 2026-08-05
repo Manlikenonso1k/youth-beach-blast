@@ -13,6 +13,7 @@ export default function ArtistPage() {
     const [formData, setFormData] = useState({
         name: '',
         performance_name: '',
+        number: '',
         email: '',
         instagram: '',
         tiktok: '',
@@ -79,6 +80,7 @@ export default function ArtistPage() {
             setFormData({
                 name: '',
                 performance_name: '',
+                number: '',
                 email: '',
                 instagram: '',
                 tiktok: '',
@@ -112,12 +114,12 @@ export default function ArtistPage() {
                     </h1>
 
                     <p className="text-body-lg text-inverse-surface max-w-2xl">
-                        Inter-university performances taking place on the 24th and 26th. Join the immersive digital stage.
+                        Inter-university performances taking place on the 25th to 26th. Join the immersive digital stage.
                     </p>
 
                     <div className="hidden lg:block glass-panel h-full min-h-[600px] relative overflow-hidden rounded-xl p-4 pb-8 flex flex-col justify-end group border border-white/20 order-3 lg:order-1">
                         <div className="absolute inset-0 z-0 opacity-50 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none" />
-                        <div className="absolute inset-0 z-0 flex items-center justify-center p-4">
+                        <div className="absolute inset-0 z-0 flex items-center justify-center p-4 pb-8">
                             <div className="w-full max-w-md">
                                 <Skiper48 />
                             </div>
@@ -160,6 +162,13 @@ export default function ArtistPage() {
                             <div className="flex flex-col gap-2">
                                 <label className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Performance Name</label>
                                 <input className="input-ghost px-3 py-3 w-full font-body-md text-white focus-gold bg-white/10 border border-white/20 rounded" onChange={updateField('performance_name')} placeholder="Stage Name" required value={formData.performance_name} type="text" />
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="flex flex-col gap-2">
+                                <label className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Number</label>
+                                <input className="input-ghost px-3 py-3 w-full font-body-md text-white focus-gold bg-white/10 border border-white/20 rounded" onChange={updateField('number')} placeholder="whatsapp number" required value={formData.number} type="tel" />
                             </div>
                         </div>
 
