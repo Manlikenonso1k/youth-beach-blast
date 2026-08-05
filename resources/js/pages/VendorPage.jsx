@@ -124,7 +124,7 @@ export default function VendorPage() {
                         <img
                             alt="Neon-lit festival night market stall with a crowd browsing"
                             className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity mix-blend-screen"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuiu1O3AUP-PWuftvPrkF6e6ekdkU-zv3f1G-VKGc_G89nukV0Oqmm82YRk-Sgd8-NQKfSoeMPquRJ0Y00ReFxdGChP53XQ_HLzyGwsFS3ECj-Rxep0GXLPksr8Wqf67YfI36sfmpf568ps5r-H2eI4Cxa-fYASFiILv0j6FK9TRR49ZqloCq0-qkc0f5J_gw6LoQhOgueQrG0LEr0FHlAbyWwMI-iuqtvl7eDZBu6hT7j3Nv1KOtvOg"
+                            src="/images/vendor.jpg"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent pointer-events-none" />
                     </div>
@@ -133,7 +133,7 @@ export default function VendorPage() {
                         <img
                             alt="Premium food vendor setup glowing at a nighttime beach festival"
                             className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity mix-blend-screen"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5z3TPOmlttHVLGo5hhHitydu6kr483kv5KY8zWfuVhe_mM01JatcJH3BBm1LVjlZdBs6azcjBaXEooNPA1nj5qrEkawEqp79cTcI-KwuYi3TqT9tpgYhDxBEmYQnsNQLg2rArY2TykaYLwMND7IRqcJMK7qvJLyGbjm3RF4_eHRZHNMC_guefn1YnzzjpZyYwdSgeHmb9slg1kl8-PanR_0zGG0wV0zElXYLEYXVintNnPgQdTIQDDw"
+                            src="/images/black-vendor.jpg"
                         />
                         <div className="absolute inset-0 border border-primary-fixed/20 rounded-2xl pointer-events-none" />
                     </div>
