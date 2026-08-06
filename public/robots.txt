@@ -1,2 +1,10 @@
 User-agent: *
-Disallow:
+Disallow: /admin/
+Disallow: /api/
+Disallow: /filament/
+Disallow: /livewire/
+Disallow: /sanctum/
+Disallow: /storage/
+Disallow: /up
+
+Sitemap: https://youthbeachblast.com/sitemap.xml
