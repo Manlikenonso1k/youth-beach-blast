@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AppLayout from '../layouts/AppLayout';
 import ArtistPage from '../pages/ArtistPage';
 import HomePage from '../pages/HomePage';
+import ExperiencePage from '../pages/ExperiencePage';
 import VendorPage from '../pages/VendorPage';
 import TicketPage from '../pages/TicketPage';
 
@@ -12,6 +13,7 @@ export default function App() {
             <AppLayout>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
+                    <Route path="/experience" element={<ExperiencePage />} />
                     <Route path="/artists" element={<ArtistPage />} />
                     <Route path="/vendors" element={<VendorPage />} />
                     <Route path="/ticket" element={<TicketPage />} />

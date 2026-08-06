@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import WhatsAppFloat from '../components/WhatsAppFloat';
 
 /**
  * AppLayout — Neon & Black base layout.
@@ -22,6 +23,9 @@ export default function AppLayout({ children }) {
 
             {/* Footer */}
             <Footer />
+
+            {/* WhatsApp Float */}
+            <WhatsAppFloat />
         </div>
     );
 }

@@ -26,7 +26,7 @@ export default function Navbar() {
     const isHome = location.pathname === '/';
 
     const navLinks = [
-        { label: 'Experience', href: isHome ? '#experience' : '/#experience' },
+        { label: 'Experience', href: '/experience' },
         { label: 'Vendors', href: '/vendors' },
         { label: 'Artists', href: '/artists' },
         { label: 'Sponsors', href: isHome ? '#sponsors' : '/#sponsors' },

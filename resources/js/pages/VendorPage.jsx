@@ -7,6 +7,73 @@ gsap.registerPlugin(ScrollTrigger);
 
 const VENDOR_BOOKING_URL = 'https://icelandbeach.com/vendor-spots';
 
+import FaqSection from '../components/ui/habit-faq-scroller';
+
+const faqData = {
+    mainTitle: "Frequently Asked Questions",
+    mainSubtitle:
+      "Have questions? We've got answers. If you can't find what you're looking for, feel free to contact us.",
+    rows: [
+      {
+        id: 'row1',
+        speed: '60s',
+        direction: 'left',
+        faqItems: [
+          {
+            id: 'q1',
+            question: 'Do you provide kiosks, tents, or booths?',
+            answer:
+              'No. Vendors must provide their own kiosk, tent, table, chairs, and display equipment.'
+          },
+          {
+            id: 'q2',
+            question: 'Can I bring my own canopy or tent?',
+            answer:
+              'Yes. Vendors are encouraged to bring their own setup.'
+          }
+        ]
+      },
+      {
+        id: 'row2',
+        speed: '45s',
+        direction: 'right',
+        faqItems: [
+          {
+            id: 'q3',
+            question: 'Do you provide transportation for vendors?',
+            answer:
+              'No. Vendors are responsible for arranging their own transportation'
+          },
+          {
+            id: 'q4',
+            question: 'Will electricity be available?',
+            answer:
+              'Yes, electricity would be available for vendors throughout the event.'
+          }
+        ]
+      },
+      {
+        id: 'row3',
+        speed: '70s',
+        direction: 'left',
+        faqItems: [
+          {
+            id: 'q5',
+            question: 'What time should vendors arrive?',
+            answer:
+              'Approved vendors will receive their setup and arrival time 22nd to 24th before the event.'
+          },
+          {
+            id: 'q6',
+            question: 'Can I sell food and drinks?',
+            answer:
+              'Subject to approval during the application process.'
+          }
+        ]
+      }
+    ]
+};
+
 /**
  * VendorPage — React translation of the vendor mockup.
  * Spacing uses the numeric Tailwind scale at the mockup's exact pixel
@@ -212,6 +279,11 @@ export default function VendorPage() {
                         </a>
                     </div>
                 </div>
+            </section>
+
+            {/* ==================== FAQ ==================== */}
+            <section className="relative z-10 w-full flex justify-center py-20">
+                <FaqSection data={faqData} />
             </section>
         </div>
     );

@@ -48,7 +48,6 @@ export default function TicketPage() {
                         </li>
                         <li className="flex items-start gap-3">
                             <span className="material-symbols-outlined text-neon-cyan">restaurant</span>
-                            <span className="font-sans text-body-md text-on-surface">Food Village</span>
                         </li>
                         <li className="flex items-start gap-3 opacity-60 mt-2">
                             <span className="material-symbols-outlined text-error">close</span>
